@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        if (!localStorage.getItem('loggedInUser')) {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-primary text-white p-3">
+            <div class="user-info text-center mb-3">
+                <img src="../images/Perfil.png" class="rounded-circle mb-3" alt="Usuario" width="80" height="80">
+                <p id="loggedInUser">[Nombre de usuario logeado]</p>
+            </div>
+            <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    [Opciones de menú]
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="index.html">Inicio</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="consultar.html">Consultar servicios</a></li>
+                    <li><a class="dropdown-item" href="registrar.html">Nuevo servicio</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+        <div class="di-flex">
+            <button type="button" onclick="mostrarSeccion('total-turnos-cliente')" class="btn btn-primary btn-lg">Turnos por cliente</button>
+            <section id="total-turnos-cliente">
+                <h2>Total de turnos por cliente</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Clientes</th>
+                            <th scope="col">Cantidades</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+        
+
+            <button type="button" onclick="mostrarSeccion('total-turnos')" class="btn btn-primary btn-lg">Todos los turnos</button>
+            <section id="total-turnos">
+                <h2>Todos los turnos cargados</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>  
+
+            <button type="button" onclick="mostrarSeccion('carga-turnos')" class="btn btn-primary btn-lg">Registrar turno</button>
+            <section id="carga-turnos">
+                <form>
+                    <h2>Carga de turno</h2>
+                    <div class="mb-3">
+                        <label for="codigo" class="form-label">Código del turno</label>
+                        <input type="number" class="form-control" id="id" aria-describedby="number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha">
+                    </div>
+                    <div class="mb-3">
+                    <label for="hora" class="form-label">Hora</label>
+                    <input type="time" class="form-control" id="hora">
+
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" id="cliente" aria-label="cliente">
+                      </select>
+    </div>
+    <button onclick="cargarTurno();" type="button" class="btn btn-primary">Cargar</button>
+    <button type="reset" class="btn btn-secondary">Limpiar</button>
+</div>
+</div>
+    </form>
+    </section>
+    </div>
+    </div>
+
+
+    <footer class="bg-primary text-white text-center py-2">
+        @2024 [Pie de página]
+    </footer>
+
+    <script>
+        document.getElementById('loggedInUser').innerText = localStorage.getItem('loggedInUser');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

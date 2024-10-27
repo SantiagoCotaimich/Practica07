@@ -1,0 +1,72 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0; 
+}
+
+.d-flex {
+    min-height: 100vh;
+}
+
+
+#sidebar {
+    height: 100vh;
+}
+
+#content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.user-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+
+.nav-item {
+    text-align: center;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+section {
+    display: none;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .table {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .d-flex button {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

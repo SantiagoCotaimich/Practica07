@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar servicios</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        if (!localStorage.getItem('loggedInUser')) {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-primary text-white p-3">
+            <div class="user-info text-center mb-3">
+                <img src="../images/Perfil.png" class="rounded-circle mb-3" alt="Usuario" width="80" height="80">
+                <p id="loggedInUser">[Nombre de usuario logeado]</p>
+            </div>
+            <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    [Opciones de menú]
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="index.html">Inicio</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="registrar.html">Nuevo servicio</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+
+        <div id="content" class="flex-grow-1 p-4">
+            <h1>Consultar Servicio</h1>
+
+            <form id="consultaTurnosForm" class="mb-4">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="servicio" class="form-label">Servicio</label>
+                        <select class="form-select" id="servicio" name="servicio">
+                            <option value="">Seleccionar servicio</option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-6">
+                        <label for="id" class="form-label">Código</label>
+                        <input type="number" class="form-control" id="id" name="id">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+
+            <div id="resultadosTurnos">
+                <h2>Servicios encontrados</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>En promoción</th>
+                            <th>Costo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-primary text-white text-center py-2">
+        @2024 [Pie de página]
+    </footer>
+
+    <script>
+        document.getElementById('loggedInUser').innerText = localStorage.getItem('loggedInUser');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
